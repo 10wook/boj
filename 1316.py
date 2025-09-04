@@ -1,32 +1,25 @@
 num = int (input())
 count=0
 for i in range(num):
-    word = list(str(input()))
-
-    # print(word)
-    word_set = set(word)
+    word = str(input())
+    GW = 1 #1이면 그룹 단어라는 뜻
+    if len(word) == 1:
+        count+=1
+        continue
     
-    for l in word_set:
-        word_temp = word[:]
-        print(word_temp)
-        bb= True
-        for j in range(word_temp.count(l)-1):
-            
-            # if word_temp.count(l)==1:
-            #     pass
-            last = word_temp.index(l)
-            print(last)
-            word_temp.pop(word_temp.index(l))
-            print(word_temp.index(l))
-            if last != word_temp.index(l):
-                bb = False#얘가 false 면 그룹 단어가 아님
-                break
-            if last == word_temp.index(l):
+    for l in range (len(word)-1 ): #숫자 횟수만큼 반복하면서 진행할거니까.
+        
+        if word[l] in word[l+1:] :
+            if word[l+1]== word[l]:
                 pass
-    if bb== False :
-        pass
-        # break
-    else: 
-        count = count + 1
+            else :
+                GW =0
+                break
+        else : 
+            pass
+
+    
+    if GW == 1 :
+        count+=1
 
 print(count)
