@@ -7,7 +7,7 @@ def subsequence_check(Long:list,short:list):
         if len(short) == 1:
             return True
         else:
-            return subsequence_check(Long[Long.index(short[0]):],short[1:])
+            return subsequence_check(Long[Long.index(short[0])+1:],short[1:])
 
 
 for i in range(1,T+1):
