@@ -164,7 +164,7 @@ def main():
     r1, t1, m1 = benchmark(solve_bruteforce, data)
     r2, t2, m2 = benchmark(solve_prefix, data)
 
-    print("=== 결과 검증 ===")
+    print("=== in1.txt결과 검증 ===")
     print("동일 결과:", r1 == r2)
 
     print("\n=== 성능 비교 ===")
@@ -178,7 +178,7 @@ def main():
     r1, t1, m1 = benchmark(solve_bruteforce, data)
     r2, t2, m2 = benchmark(solve_prefix, data)
 
-    print("=== 결과 검증 ===")
+    print("=== in_2.txt결과 검증 ===")
     print("동일 결과:", r1 == r2)
 
     print("\n=== 성능 비교 ===")
@@ -196,7 +196,7 @@ def main():
     r1, t1, m1 = benchmark(solve_bruteforce, data)
     r2, t2, m2 = benchmark(solve_prefix, data)
 
-    print("=== 결과 검증 ===")
+    print(f'=== in_200.txt 결과 검증 ===')
     print("동일 결과:", r1 == r2)
 
     print("\n=== 성능 비교 ===")
