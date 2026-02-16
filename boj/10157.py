@@ -9,16 +9,17 @@ else:
     dir = 0
     status = [[0]*M for _ in range(N)]
     def move(x,y,dir):
+        
         if 0<=x+dx[dir] <N and 0<=y+dy[dir]<M:
-            if status[x+dx[dir]][y+dy[dir]] != 0:
+            while status[x+dx[dir]][y+dy[dir]] != 0:
                 dir = (dir+1)%4
-            return x+dx[dir], y+dy[dir]
+            return x+dx[dir], y+dy[dir],dir
         else:
             dir = (dir+1)%4
-            return x+dx[dir], y+dy[dir]
+            return x+dx[dir], y+dy[dir],dir
     for i in range(I-1):
         status[x][y] = -1
-        x,y = move(x,y,dir)
+        x,y,dir = move(x,y,dir)
     
     
-    print(x+1 ,y+1)
+    print(y+1,x+1)
